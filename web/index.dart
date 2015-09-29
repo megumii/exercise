@@ -3,9 +3,11 @@ import 'dart:math' as math;
 void main() {
 
    querySelector('#sample_text_id')
-    ..text="click me"
+    ..text="Input The Numbers First AND Click Me To Get The Result"
     ..onClick.listen(myText);
-
+   querySelector('#sample_text_result')
+     ..text="CLICK ME TO GET THE RESULT"
+     ..onClick.listen(addhundred);
 }
 
 
@@ -21,4 +23,12 @@ void myText(MouseEvent event){
 void addNumber(num a,num b){
   var c=a+b;
   document.getElementById("sample_studentid_id").value=c.toString();
+}
+
+void addhundred(MouseEvent event){
+  var s=0;
+  for (int i = 1; i <101; i++){
+  s=s+i;
+  }
+  querySelector('#sample_text_result').text=s.toString();
 }
